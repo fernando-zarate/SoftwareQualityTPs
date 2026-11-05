@@ -7,7 +7,7 @@ Sí. Antes de ejecutar Ruff, la aplicación iniciaba correctamente con `python3 
 
 ![alt text](capturas/python_app.jpeg)
 
-![alt text](image.png)
+![alt text](capturas/app.jpeg)
 ## ¿Qué tipo de problemas pudo detectar el linter sin ejecutar la aplicación?
 
 Ruff detectó cinco problemas mediante el análisis estático del código fuente:
