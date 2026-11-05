@@ -1,7 +1,4 @@
 import json
-import os
-import sys
-from datetime import datetime
 from pathlib import Path
 
 from flask import Flask, render_template, request
@@ -16,7 +13,7 @@ def cargar_usuarios():
     try:
         with USERS_FILE.open("r", encoding="utf-8") as archivo:
             return json.load(archivo)
-    except:
+    except (OSError, json.JSONDecodeError):
         return []
 
 
@@ -46,7 +43,6 @@ def inscripcion():
     usuarios.append(nuevo_usuario)
     guardar_usuarios(usuarios)
 
-    mensaje_temporal = "Inscripción guardada"
 
     return render_template(
         "index.html",
